@@ -266,20 +266,7 @@ const modal = {
   imgWrap: $('modalImgWrap'),
 
   open(data) {
-    this.imgWrap.innerHTML = `
-      <div class="modal-img-real">
-        <img
-          src="${data.image || ''}"
-          alt="${data.name || 'Dish'}"
-          loading="lazy"
-          onerror="this.onerror=null;this.style.display='none';this.parentElement.querySelector('.modal-img-fallback').style.display='flex';"
-        />
-        <div class="modal-img-fallback" style="display:none;">
-          <span class="modal-img-fallback-text">${data.name || 'Dish Image'}</span>
-        </div>
-      </div>
-    `;
-
+    // Show modal immediately with text content
     this.body.innerHTML = `
       <div class="modal-red-bar"></div>
       <div class="modal-jp">${data.jp || '日本料理'}</div>
@@ -296,8 +283,35 @@ const modal = {
         </div>
       </div>
     `;
+
+    this.imgWrap.innerHTML = `
+      <div class="modal-img-real">
+        <div class="modal-img-shimmer"></div>
+        <img
+          src="${data.image || ''}"
+          alt="${data.name || 'Dish'}"
+          loading="eager"
+          decoding="async"
+          onload="this.style.opacity='1';var s=this.previousElementSibling;if(s&&s.classList.contains('modal-img-shimmer'))s.style.display='none';"
+          onerror="this.onerror=null;this.style.display='none';var s=this.previousElementSibling;if(s)s.style.display='none';var f=this.parentElement.querySelector('.modal-img-fallback');if(f)f.style.display='flex';"
+          style="opacity:0;transition:opacity 0.2s ease;"
+        />
+        <div class="modal-img-fallback" style="display:none;">
+          <span class="modal-img-fallback-text">${data.name || 'Dish Image'}</span>
+        </div>
+      </div>
+    `;
+
     this.ov.classList.add('open');
     document.body.style.overflow = 'hidden';
+
+    // Handle already-cached images (onload won't fire for cached)
+    const img = this.imgWrap.querySelector('img');
+    if (img && img.complete && img.naturalWidth > 0) {
+      img.style.opacity = '1';
+      const shimmer = this.imgWrap.querySelector('.modal-img-shimmer');
+      if (shimmer) shimmer.style.display = 'none';
+    }
   },
 
   close() {
