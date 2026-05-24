@@ -1395,6 +1395,40 @@ img { max-width: 100%; display: block; }
   }
 }
 
+/* Landscape mobile: modal side-by-side layout so it fits the short screen */
+@media (max-width: 900px) and (orientation: landscape) {
+  .modal-overlay {
+    align-items: center;
+    padding: 10px 16px;
+  }
+  .modal {
+    display: flex;
+    flex-direction: row;
+    max-width: min(90vw, 680px);
+    max-height: 92vh;
+    width: 90vw;
+    overflow: hidden;
+  }
+  .modal-img-wrap {
+    width: 42%;
+    min-width: 42%;
+    aspect-ratio: unset;
+    height: auto;
+    align-self: stretch;
+    border-radius: 0;
+  }
+  .modal-body {
+    flex: 1;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: 16px 18px 20px;
+  }
+  .modal-close {
+    top: 8px;
+    right: 8px;
+  }
+}
+
 @media (max-width: 540px) {
   .section { padding: 60px 16px; width: 100%; }
   .welcome-section { padding: 100px 16px 60px; width: 100%; }
