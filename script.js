@@ -9,37 +9,37 @@
 // image: path to image file (e.g. 'images/ramen.jpg')
 const MENU = {
   hotRamen: [
-    { id:1, name:'Paitan Ramen',       price:'₹279', desc:'Rich broth with tender noodles and signature flavour.',                                                                   tag:'Signature', jp:'パイタンラーメン',       veg: false, image:'images/mountains.jpg' },
-    { id:2, name:'Shoyu Ramen',        price:'₹289', desc:'Sauce based ramen with balanced umami taste.',                                                                            tag:'Classic',   jp:'しょうゆラーメン',        veg: false, image:'images/2.jpg' },
-    { id:3, name:'Miso Ramen',         price:'₹349', desc:'Classic Japanese miso based ramen with savory depth.',                                                                    tag:'Popular',   jp:'味噌ラーメン',             veg: false, image:'images/miso-ramen.jpg' },
-    { id:4, name:'Shoyu Paitan Ramen', price:'₹319', desc:'A fusion of shoyu sauce and paitan ramen broth flavour.',                                                                 tag:'Fusion',    jp:'しょうゆパイタン',         veg: false, image:'images/shoyu-paitan.jpg' },
-    { id:5, name:'Tantanmen',          price:'₹299', desc:'Spicy sesame ramen with creamy texture, topped with minced chicken and spring onions.',                                   tag:'Spicy',     jp:'担々麺',                  veg: false, image:'images/tantanmen.jpg' }
+    { id:1, name:'Paitan Ramen',       price:'₹279', desc:'Rich broth with tender noodles and signature flavour.',                                                                   tag:'Signature', jp:'パイタンラーメン',       veg: false, image:'images/1.jpg' },
+    { id:2, name:'Shoyu Ramen',        price:'₹289', desc:'Sauce based ramen with balanced umami taste.',                                                                            tag:'Classic',   jp:'しょうゆラーメン',        veg: false, image:'images/1.jpg' },
+    { id:3, name:'Miso Ramen',         price:'₹349', desc:'Classic Japanese miso based ramen with savory depth.',                                                                    tag:'Popular',   jp:'味噌ラーメン',             veg: false, image:'images/1.jpg' },
+    { id:4, name:'Shoyu Paitan Ramen', price:'₹319', desc:'A fusion of shoyu sauce and paitan ramen broth flavour.',                                                                 tag:'Fusion',    jp:'しょうゆパイタン',         veg: false, image:'images/1.jpg' },
+    { id:5, name:'Tantanmen',          price:'₹299', desc:'Spicy sesame ramen with creamy texture, topped with minced chicken and spring onions.',                                   tag:'Spicy',     jp:'担々麺',                  veg: false, image:'images/1.jpg' }
   ],
   ramen: [
-    { id:1, name:'Veg Ramen',           price:'₹199', desc:'Light and flavourful vegetarian ramen.',                                                                                  tag:'Vegetarian', jp:'ベジラーメン',           veg: true,  image:'images/mountains.jpg' },
-    { id:2, name:'Kimchi Ramen',        price:'₹210', desc:'An incredibly flavourful kimchi ramen with spicy authentic flavors.',                                                     tag:'Spicy',      jp:'キムチラーメン',          veg: true,  image:'images/kimchi-ramen.jpg' },
-    { id:3, name:'Gochujang Soba',      price:'₹320', desc:'Great fusion taste of chilli honey and sesame oil, served with signature toppings.',                                      tag:'Fusion',     jp:'コチュジャンそば',        veg: true,  image:'images/gochujang-soba.jpg' },
-    { id:4, name:'Taiwan Mazesoba',     price:'₹289', desc:'Seasoned sautéed minced chicken soba with spring onion, poached egg and nori on top.',                                   tag:"Chef's Pick",jp:'台湾まぜそば',            veg: false, image:'images/taiwan-mazesoba.jpg' },
-    { id:5, name:'Shoyu Karaage Soba',  price:'₹289', desc:'Light seasoned soba with soy sauce, karaage chicken, spring onion and shredded nori on top.',                            tag:'Popular',    jp:'しょうゆからあげそば',    veg: false, image:'images/shoyu-karaage-soba.jpg' },
-    { id:6, name:'Aburi Soba',          price:'₹299', desc:'Light seasoned soba with aburi sauce, spring onion, braised chicken and soft boiled egg on top.',                         tag:'Signature',  jp:'あぶりそば',             veg: false, image:'images/aburi-soba.jpg' }
+    { id:1, name:'Veg Ramen',           price:'₹199', desc:'Light and flavourful vegetarian ramen.',                                                                                  tag:'Vegetarian', jp:'ベジラーメン',           veg: true,  image:'images/1.jpg' },
+    { id:2, name:'Kimchi Ramen',        price:'₹210', desc:'An incredibly flavourful kimchi ramen with spicy authentic flavors.',                                                     tag:'Spicy',      jp:'キムチラーメン',          veg: true,  image:'images/1.jpg' },
+    { id:3, name:'Gochujang Soba',      price:'₹320', desc:'Great fusion taste of chilli honey and sesame oil, served with signature toppings.',                                      tag:'Fusion',     jp:'コチュジャンそば',        veg: true,  image:'images/1.jpg' },
+    { id:4, name:'Taiwan Mazesoba',     price:'₹289', desc:'Seasoned sautéed minced chicken soba with spring onion, poached egg and nori on top.',                                   tag:"Chef's Pick",jp:'台湾まぜそば',            veg: false, image:'images/1.jpg' },
+    { id:5, name:'Shoyu Karaage Soba',  price:'₹289', desc:'Light seasoned soba with soy sauce, karaage chicken, spring onion and shredded nori on top.',                            tag:'Popular',    jp:'しょうゆからあげそば',    veg: false, image:'images/1.jpg' },
+    { id:6, name:'Aburi Soba',          price:'₹299', desc:'Light seasoned soba with aburi sauce, spring onion, braised chicken and soft boiled egg on top.',                         tag:'Signature',  jp:'あぶりそば',             veg: false, image:'images/1.jpg' }
   ],
   sushi: {
     smallRoll: {
       title:'Small Roll', badge:'6 PCS',
       items:[
-        { id:1, name:'Carrot Maki',  price:'₹129', veg: true,  image:'images/mountains.jpg' },
-        { id:2, name:'Kappa Maki',   price:'₹129', veg: true,  image:'images/kappa-maki.jpg' },
-        { id:3, name:'Tuna Maki',    price:'₹169', veg: false, image:'images/tuna-maki.jpg' },
-        { id:4, name:'Kimchi Maki',  price:'₹159', veg: true,  image:'images/kimchi-maki.jpg' }
+        { id:1, name:'Carrot Maki',  price:'₹129', veg: true,  image:'images/1.jpg' },
+        { id:2, name:'Kappa Maki',   price:'₹129', veg: true,  image:'images/1.jpg' },
+        { id:3, name:'Tuna Maki',    price:'₹169', veg: false, image:'images/1.jpg' },
+        { id:4, name:'Kimchi Maki',  price:'₹159', veg: true,  image:'images/1.jpg' }
       ]
     },
     modernRoll: {
       title:'Modern Roll', badge:'8 PCS',
       items:[
-        { id:1, name:'Shrimp Futo Maki',     price:'₹259', veg: false, image:'images/mountains.jpg' },
-        { id:2, name:'Cheese Cucumber Roll', price:'₹209', veg: true,  image:'images/cheese-cucumber-roll.jpg' },
-        { id:3, name:'Oishi Veg Roll',       price:'₹229', veg: true,  image:'images/oishi-veg-roll.jpg' },
-        { id:4, name:'Kaarage Futo Maki',    price:'₹269', veg: false, image:'images/kaarage-futo-maki.jpg' }
+        { id:1, name:'Shrimp Futo Maki',     price:'₹259', veg: false, image:'images/1.jpg' },
+        { id:2, name:'Cheese Cucumber Roll', price:'₹209', veg: true,  image:'images/1.jpg' },
+        { id:3, name:'Oishi Veg Roll',       price:'₹229', veg: true,  image:'images/1.jpg' },
+        { id:4, name:'Kaarage Futo Maki',    price:'₹269', veg: false, image:'images/1.jpg' }
       ]
     }
   },
