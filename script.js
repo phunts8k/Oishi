@@ -447,6 +447,21 @@ function renderToppings() {
   `).join('');
 }
 
+// ---- PRELOAD ALL MENU IMAGES ----
+function preloadMenuImages() {
+  const allImages = new Set();
+  [...MENU.hotRamen, ...MENU.ramen, ...MENU.appetisers].forEach(item => {
+    if (item.image) allImages.add(item.image);
+  });
+  [MENU.sushi.smallRoll, MENU.sushi.modernRoll].forEach(cat => {
+    cat.items.forEach(item => { if (item.image) allImages.add(item.image); });
+  });
+  allImages.forEach(src => {
+    const img = new Image();
+    img.src = src;
+  });
+}
+
 // ---- INIT ----
 function init() {
   document.body.style.overflow = 'hidden';
@@ -464,6 +479,9 @@ function init() {
   initSplash();
 
   setTimeout(observeCards, 120);
+
+  // Preload modal images silently in background after page settles
+  setTimeout(preloadMenuImages, 1500);
 }
 
 document.addEventListener('DOMContentLoaded', init);
