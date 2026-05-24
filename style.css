@@ -1440,4 +1440,11 @@ img { max-width: 100%; display: block; }
     -webkit-overflow-scrolling: touch;
     margin: 0 auto;
   }
+  .footer-inner { flex-direction: column; gap: 24px; align-items: center; text-align: center; }
+  .footer-brand { justify-content: center; }
+  .footer-links { flex-direction: row; flex-wrap: wrap; gap: 8px; justify-content: center; }
+  .f-link { min-width: auto; flex-direction: column; align-items: center; text-align: center; gap: 4px; padding: 8px 10px; font-size: 0.75rem; }
+  .f-lbl { font-size: 0.52rem; }
+  .f-val { font-size: 0.72rem; }
+  .footer-bottom { text-align: center; }
 }
