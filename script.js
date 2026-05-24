@@ -10,7 +10,7 @@
 const MENU = {
   hotRamen: [
     { id:1, name:'Paitan Ramen',       price:'₹279', desc:'Rich broth with tender noodles and signature flavour.',                                                                   tag:'Signature', jp:'パイタンラーメン',       veg: false, image:'images/mountains.jpg' },
-    { id:2, name:'Shoyu Ramen',        price:'₹289', desc:'Sauce based ramen with balanced umami taste.',                                                                            tag:'Classic',   jp:'しょうゆラーメン',        veg: false, image:'images/shoyu-ramen.jpg' },
+    { id:2, name:'Shoyu Ramen',        price:'₹289', desc:'Sauce based ramen with balanced umami taste.',                                                                            tag:'Classic',   jp:'しょうゆラーメン',        veg: false, image:'images/2.jpg' },
     { id:3, name:'Miso Ramen',         price:'₹349', desc:'Classic Japanese miso based ramen with savory depth.',                                                                    tag:'Popular',   jp:'味噌ラーメン',             veg: false, image:'images/miso-ramen.jpg' },
     { id:4, name:'Shoyu Paitan Ramen', price:'₹319', desc:'A fusion of shoyu sauce and paitan ramen broth flavour.',                                                                 tag:'Fusion',    jp:'しょうゆパイタン',         veg: false, image:'images/shoyu-paitan.jpg' },
     { id:5, name:'Tantanmen',          price:'₹299', desc:'Spicy sesame ramen with creamy texture, topped with minced chicken and spring onions.',                                   tag:'Spicy',     jp:'担々麺',                  veg: false, image:'images/tantanmen.jpg' }
