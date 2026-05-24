@@ -266,7 +266,20 @@ const modal = {
   imgWrap: $('modalImgWrap'),
 
   open(data) {
-    // Show modal immediately with text content
+    this.imgWrap.innerHTML = `
+      <div class="modal-img-real">
+        <img
+          src="${data.image || ''}"
+          alt="${data.name || 'Dish'}"
+          loading="lazy"
+          onerror="this.onerror=null;this.style.display='none';this.parentElement.querySelector('.modal-img-fallback').style.display='flex';"
+        />
+        <div class="modal-img-fallback" style="display:none;">
+          <span class="modal-img-fallback-text">${data.name || 'Dish Image'}</span>
+        </div>
+      </div>
+    `;
+
     this.body.innerHTML = `
       <div class="modal-red-bar"></div>
       <div class="modal-jp">${data.jp || '日本料理'}</div>
@@ -283,48 +296,8 @@ const modal = {
         </div>
       </div>
     `;
-
-    // Set up image container with a loading shimmer while the image loads
-    this.imgWrap.innerHTML = `
-      <div class="modal-img-real">
-        <div class="modal-img-shimmer"></div>
-        <img
-          id="modalDishImg"
-          src=""
-          alt="${data.name || 'Dish'}"
-          loading="eager"
-          style="opacity:0;transition:opacity 0.25s ease;"
-          onerror="this.onerror=null;this.style.display='none';document.getElementById('modalImgShimmer')&&(document.getElementById('modalImgShimmer').style.display='none');this.parentElement.querySelector('.modal-img-fallback').style.display='flex';"
-        />
-        <div class="modal-img-fallback" style="display:none;">
-          <span class="modal-img-fallback-text">${data.name || 'Dish Image'}</span>
-        </div>
-      </div>
-    `;
-
     this.ov.classList.add('open');
     document.body.style.overflow = 'hidden';
-
-    // Preload image: use browser cache if already loaded from card thumbnail,
-    // otherwise fetch eagerly and fade in when ready
-    if (data.image) {
-      const img = this.imgWrap.querySelector('#modalDishImg');
-      const shimmer = this.imgWrap.querySelector('.modal-img-shimmer');
-      const preloader = new window.Image();
-      preloader.onload = () => {
-        img.src = data.image;
-        img.style.opacity = '1';
-        if (shimmer) shimmer.style.display = 'none';
-      };
-      preloader.onerror = () => {
-        if (shimmer) shimmer.style.display = 'none';
-        img.style.display = 'none';
-        const fallback = this.imgWrap.querySelector('.modal-img-fallback');
-        if (fallback) fallback.style.display = 'flex';
-      };
-      // If the image is already cached (loaded on the card), this fires instantly
-      preloader.src = data.image;
-    }
   },
 
   close() {
