@@ -1323,7 +1323,6 @@ img { max-width: 100%; display: block; }
 .reveal.visible { opacity: 1; transform: translateY(0); }
 
 /* ---- CARD ENTRANCE ---- */
-/* Cards start hidden via JS; use a single consistent animation class */
 .card-enter {
   opacity: 0;
   transform: translateY(20px);
@@ -1331,33 +1330,24 @@ img { max-width: 100%; display: block; }
 .card-enter.card-visible {
   opacity: 1;
   transform: translateY(0);
-  /* transition applied inline by JS with staggered delay */
 }
 
 /* ---- RESPONSIVE ---- */
 @media (max-width: 900px) {
-  /* Narrower navbar height on mobile */
   .nav-inner {
     height: 58px;
     padding: 0 16px;
   }
-
-  /* Hamburger: show, rightmost */
   .hamburger { display: flex; z-index: 1002; position: relative; margin-left: auto; }
-
-  /* Slide-in panel */
   .nav-links {
     position: fixed;
     top: 0; right: -100%;
-    /* No bottom: 0 — height driven by content so no scroll needed */
     width: min(260px, 80vw);
     background: var(--nav-bg);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     flex-direction: column;
-    /* Center links horizontally inside the panel */
     align-items: center;
-    /* Small top padding so "Welcome" sits near the top */
     padding: 24px 20px 32px;
     gap: 0;
     transition: right 0.38s cubic-bezier(0.4,0,0.2,1);
@@ -1369,8 +1359,6 @@ img { max-width: 100%; display: block; }
     max-height: 100vh;
   }
   .nav-links.open { right: 0; }
-
-  /* Each link: full width, text centred inside its row */
   .nav-link {
     font-size: 0.9rem;
     padding: 10px 0;
@@ -1380,22 +1368,8 @@ img { max-width: 100%; display: block; }
     display: block;
   }
   .nav-link:last-of-type { border-bottom: none; }
-
   .theme-toggle { margin-left: 0; margin-top: 14px; }
 }
-
-/* Landscape mobile: compact nav link spacing so menu fits without scrolling */
-@media (max-width: 900px) and (orientation: landscape) {
-  .nav-links {
-    padding-top: 16px;
-    padding-bottom: 20px;
-  }
-  .nav-link {
-    padding: 7px 0;
-  }
-}
-
-
 
 @media (max-width: 540px) {
   .section { padding: 60px 16px; width: 100%; }
@@ -1425,8 +1399,17 @@ img { max-width: 100%; display: block; }
   .wt-line1 { font-size: clamp(3.5rem, 18vw, 6rem); }
 }
 
-/* Landscape mobile: same portrait layout, just fitted to short screen */
+/* ---- LANDSCAPE MOBILE ---- */
 @media (max-width: 900px) and (orientation: landscape) {
+  /* Nav: compact spacing */
+  .nav-links {
+    padding-top: 16px;
+    padding-bottom: 20px;
+  }
+  .nav-link {
+    padding: 7px 0;
+  }
+  /* Modal: portrait layout, fitted to short screen, centered */
   .modal-overlay {
     align-items: center;
     justify-content: center;
@@ -1440,6 +1423,7 @@ img { max-width: 100%; display: block; }
     -webkit-overflow-scrolling: touch;
     margin: 0 auto;
   }
+  /* Footer: centered like portrait */
   .footer-inner { flex-direction: column; gap: 24px; align-items: center; text-align: center; }
   .footer-brand { justify-content: center; }
   .footer-links { flex-direction: row; flex-wrap: wrap; gap: 8px; justify-content: center; }
