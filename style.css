@@ -62,7 +62,7 @@
 
 /* ---- RESET ---- */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; width: 100%; }
+html { scroll-behavior: smooth; width: 100%; overflow-x: hidden; }
 body {
   font-family: var(--font-body);
   background: var(--bg);
@@ -426,6 +426,7 @@ img { max-width: 100%; display: block; }
   filter: grayscale(1);
   overflow: hidden;
   z-index: 3;
+  max-width: 50vw;
 }
 
 .scroll-cue {
@@ -1333,6 +1334,17 @@ img { max-width: 100%; display: block; }
   /* transition applied inline by JS with staggered delay */
 }
 
+/* Landscape mobile: nav panel must scroll if content taller than screen */
+@media (max-width: 900px) and (orientation: landscape) {
+  .nav-links {
+    padding-top: 16px;
+    padding-bottom: 24px;
+  }
+  .nav-link {
+    padding: 8px 0;
+  }
+}
+
 /* ---- RESPONSIVE ---- */
 @media (max-width: 900px) {
   /* Narrower navbar height on mobile */
@@ -1348,7 +1360,7 @@ img { max-width: 100%; display: block; }
   .nav-links {
     position: fixed;
     top: 0; right: -100%;
-    /* No bottom: 0 — height driven by content so no scroll needed */
+    height: 100%;
     width: min(260px, 80vw);
     background: var(--nav-bg);
     backdrop-filter: blur(20px);
@@ -1363,8 +1375,8 @@ img { max-width: 100%; display: block; }
     border-left: 1px solid var(--card-border);
     z-index: 1001;
     box-shadow: -10px 0 40px rgba(0,0,0,0.4);
-    /* No overflow-y so no scroll needed */
-    overflow-y: visible;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
   }
   .nav-links.open { right: 0; }
 
