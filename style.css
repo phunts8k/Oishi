@@ -1433,14 +1433,11 @@ img { max-width: 100%; display: block; }
     padding: 8px 16px;
   }
   .modal {
-    width: 52vw;
-    max-width: 340px;
-    max-height: 94vh;
+    width: 50vw;
+    max-width: 320px;
+    max-height: 92vh;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
     margin: 0 auto;
-  }
-  .modal-img-wrap {
-    aspect-ratio: 16/9;
   }
 }
