@@ -44,8 +44,8 @@ const MENU = {
     }
   },
   appetisers: [
-    { id:1, name:'Kaarage',           price:'₹219', desc:'Japanese seasoned style fried chicken bites.',                             tag:'Popular', jp:'からあげ',  veg: false, image:'images/mountains.jpg' },
-    { id:2, name:'Ebi Fried (Shrimp)',price:'₹219', desc:'Crispy deep fried shrimp served with tempura sauce on the side.',          tag:'Seafood',  jp:'海老フライ', veg: false, image:'images/ebi-fried.jpg' }
+    { id:1, name:'Kaarage',           price:'₹219', desc:'Japanese seasoned style fried chicken bites.',                             tag:'Popular', jp:'からあげ',  veg: false, image:'images/1.jpg' },
+    { id:2, name:'Ebi Fried (Shrimp)',price:'₹219', desc:'Crispy deep fried shrimp served with tempura sauce on the side.',          tag:'Seafood',  jp:'海老フライ', veg: false, image:'images/1.jpg' }
   ],
   beverage: [
     { id:1, name:'Peach Ice Tea',    price:'₹80',  icon:'🍑' },
