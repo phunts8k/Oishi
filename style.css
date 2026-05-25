@@ -316,19 +316,13 @@ img { max-width: 100%; display: block; }
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.65);
+  background: rgba(0, 0, 0, 0.35);
   z-index: 1;
   pointer-events: none;
 }
 
 .welcome-grid-bg {
-  position: absolute; inset: 0;
-  background-image:
-    linear-gradient(rgba(212,43,43,0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(212,43,43,0.05) 1px, transparent 1px);
-  background-size: 60px 60px;
-  pointer-events: none;
-  z-index: 2;
+  display: none;
 }
 
 .welcome-stripe {
